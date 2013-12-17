@@ -1,0 +1,13 @@
+module Xsys
+  class SaleItem
+    attr_accessor :shop_code, :product_id, :seller_id, :quantity, :amount_total,
+      :client_id, :transaction_date, :receipt_number, :transaction_id,
+      :transaction_kind_id, :transaction_status_id
+
+    def initialize(attributes={})
+      attributes.each do |k,v|
+        self.send("#{k}=", v)
+      end
+    end
+  end
+end
