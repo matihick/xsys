@@ -1,7 +1,7 @@
 module Xsys
   module Model
     class Stock
-      attr_accessor :shop_id, :shop_code, :shop_name, :quantity
+      attr_accessor :shop_code, :quantity
 
       def initialize(attributes={})
         attributes.each do |k,v|
