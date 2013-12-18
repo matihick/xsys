@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   s.description   = "Get data from xsys api"
   s.license       = "MIT"
 
-  s.files         = Dir["LICENSE.md", "README.md", "lib/**/*"]
+  s.files         = Dir["LICENSE.md", "README.md", "CHANGELOG.md", "lib/**/*"]
   s.executables   = []
   s.require_paths = ["lib"]
 
