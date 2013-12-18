@@ -18,4 +18,4 @@ require 'xsys/version'
 
 # dependencies
 require 'rest-client'
-
+require 'singleton'

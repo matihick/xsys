@@ -1,5 +1,7 @@
 module Xsys
   class Api
+    include Singleton
+
     def self.configure(args={})
       @access_token = args[:access_token]
       @endpoint = args[:endpoint]

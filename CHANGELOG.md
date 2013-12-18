@@ -13,3 +13,7 @@
 ## v0.0.4
 
 * Bugfix: Authentication token not being passed correctly
+
+## v0.0.5
+
+* Api class turned into singleton class
