@@ -2,7 +2,8 @@ module Xsys
   module Model
     class Shop
       attr_accessor :id, :code, :name, :is_commercial, :is_virtual,
-        :is_physical, :is_stockable, :has_target, :is_service
+        :is_physical, :is_stockable, :has_target, :is_service,
+        :physical_shop_code, :physical_shop_id
 
       def initialize(attributes={})
         attributes.each do |k,v|
