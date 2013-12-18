@@ -100,10 +100,10 @@ module Xsys
       @endpoint || 'https://xsys.lhconfort.com.ar'
     end
 
-    def get_request(action, params={}, headers={})
-      headers.merge!({ authorization: "Token token=\"#{@access_token}\"" })
-
-      response = ::RestClient.get("#{Xsys::Api.endpoint}#{action}", {params: params}.merge(headers))
+    def get_request(action, params={})
+      response = ::RestClient.get("#{Xsys::Api.endpoint}#{action}", {params: params}.merge({
+        authorization: "Token token=\"#{Xsys::Api.access_token}\""
+      }))
 
       if response.headers[:link]
         {
