@@ -5,3 +5,7 @@
 ## v0.0.2
 
 * Bugfix: Authentication header missing
+
+## v0.0.3
+
+* Added attributes to shop
