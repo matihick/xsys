@@ -17,3 +17,7 @@
 ## v0.0.5
 
 * Api class turned into singleton class
+
+## v0.0.6
+
+* Api class turned into singleton class
