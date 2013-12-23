@@ -20,4 +20,8 @@
 
 ## v0.0.6
 
-* Api class turned into singleton class
+* Bugfixes
+
+## v0.0.7
+
+* All api methods are static
