@@ -25,3 +25,7 @@
 ## v0.0.7
 
 * All api methods are static
+
+## v0.0.8
+
+* Added param to sales period

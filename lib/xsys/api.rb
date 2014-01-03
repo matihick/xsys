@@ -58,11 +58,12 @@ module Xsys
       get_request('/sellers').map { |r| Model::Seller.new(r) }
     end
 
-    def self.get_sales_period(period, from, to, shop_code=nil)
+    def self.get_sales_period(period, from, to, shop_code=nil, only_with_target=false)
       get_request("/sales_periods/#{period}", {
         date_from: from,
         date_to: to,
-        shop_code: shop_code
+        shop_code: shop_code,
+        only_with_target: only_with_target
       }).map { |r| Model::SalesPeriod.new(r) }
     end
 
