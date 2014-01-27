@@ -3,7 +3,8 @@ module Xsys
     class Product
       attr_accessor :id, :name, :cost, :active, :sellable, :list_price_1, :list_price_6,
         :list_price_35, :markup_1, :markup_6, :markup_35, :category, :provider, :stocks,
-        :remaining_quantity, :sales, :value_added_tax
+        :remaining_quantity, :sales, :value_added_tax, :list_price_1_date, :list_price_6_date,
+        :list_price_35_date, :cost_date
 
       def initialize(attributes={})
         attributes.each do |k,v|

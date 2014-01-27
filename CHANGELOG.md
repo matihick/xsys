@@ -29,3 +29,7 @@
 ## v0.0.8
 
 * Added param to sales period
+
+## v0.0.9
+
+* Added fields for products
