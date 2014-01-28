@@ -41,3 +41,7 @@
 ## v0.0.11
 
 * Fixed syntax error
+
+## v0.0.12
+
+* Fixed syntax error
