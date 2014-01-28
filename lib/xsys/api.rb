@@ -94,9 +94,13 @@ module Xsys
     private
 
     def self.get_request(action, params={})
-      response = ::RestClient.get("#{@endpoint}#{action}", {params: params}.merge({
-        authorization: "Token token=\"#{@access_token}\""
-      }))
+      response = Request.execute(method: :get, url: "#{@endpoint}#{action}",
+        , timeout: -1
+        , open_timeout: -1
+        , headers: {
+          params: params
+        }.merge({ authorization: "Token token=\"#{@access_token}\"" })
+      )
 
       if response.headers[:link]
         {

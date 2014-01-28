@@ -33,3 +33,7 @@
 ## v0.0.9
 
 * Added fields for products
+
+## v0.0.10
+
+* Removed timeout
