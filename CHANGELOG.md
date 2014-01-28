@@ -37,3 +37,7 @@
 ## v0.0.10
 
 * Removed timeout
+
+## v0.0.11
+
+* Fixed syntax error
