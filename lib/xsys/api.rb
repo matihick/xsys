@@ -95,7 +95,7 @@ module Xsys
 
     def self.get_request(action, params={})
       response = ::RestClient::Request.execute(method: :get, url: "#{@endpoint}#{action}",
-        timeout: -1, open_timeout: -1, headers: {
+        timeout: -1, read_timeout: -1, headers: {
           params: params
         }.merge({ authorization: "Token token=\"#{@access_token}\"" })
       )
