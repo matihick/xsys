@@ -53,3 +53,7 @@
 ## v0.0.14
 
 * Added fiscal position methods
+
+## v0.0.15
+
+* Added requires for new models

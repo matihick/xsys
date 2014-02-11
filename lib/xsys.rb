@@ -11,6 +11,8 @@ require 'xsys/model/sales_period'
 require 'xsys/model/seller'
 require 'xsys/model/shop'
 require 'xsys/model/stock'
+require 'xsys/model/purchases_position'
+require 'xsys/model/sales_position'
 
 require 'xsys/api'
 require 'xsys/pagination'
