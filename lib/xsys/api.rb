@@ -91,6 +91,16 @@ module Xsys
       request
     end
 
+    def self.get_sales_position(period)
+      request = get_request("/sales_position/#{period}")
+      request.map { |r| Model::SalesPosition.new(r) }
+    end
+
+    def self.get_purchases_position(period)
+      request = get_request("/purchases_position/#{period}")
+      request.map { |r| Model::PurchasesPosition.new(r) }
+    end
+
     private
 
     def self.get_request(action, params={})

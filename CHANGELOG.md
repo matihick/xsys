@@ -49,3 +49,7 @@
 ## v0.0.13
 
 * Fixed syntax error
+
+## v0.0.14
+
+* Added fiscal position methods
