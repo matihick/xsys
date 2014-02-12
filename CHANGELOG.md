@@ -61,3 +61,7 @@
 ## v0.0.16
 
 * Added virtual methods to fiscal position classes
+
+## v0.0.17
+
+* Fixed purchases taxes grand total
