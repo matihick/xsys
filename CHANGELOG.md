@@ -57,3 +57,7 @@
 ## v0.0.15
 
 * Added requires for new models
+
+## v0.0.16
+
+* Added virtual methods to fiscal position classes
