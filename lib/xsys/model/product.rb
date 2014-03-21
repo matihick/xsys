@@ -20,6 +20,10 @@ module Xsys
         end
       end
 
+      def sellable_stock
+        stocks.find_all { |s| ![:ser, :ext].include?(s.shop_code.to_sym) }.map(&:quantity).sum
+      end
+
       def stock_in(shop_code)
         stocks.find { |s| s.shop_code.to_sym == shop_code.to_sym }.try(:quantity)
       end

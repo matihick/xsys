@@ -65,3 +65,7 @@
 ## v0.0.17
 
 * Fixed purchases taxes grand total
+
+## v0.0.18
+
+* Added sellable stock total
