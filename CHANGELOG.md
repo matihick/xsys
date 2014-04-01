@@ -85,3 +85,7 @@
 ## v0.0.22
 
 * Bugfix stock controls pagination
+
+## v0.0.23
+
+* Cast transaction date to date

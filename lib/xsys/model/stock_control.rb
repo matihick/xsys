@@ -7,7 +7,11 @@ module Xsys
 
       def initialize(attributes={})
         attributes.each do |k,v|
-          self.send("#{k}=", v) if self.respond_to?(k)
+          if k.to_s == 'transaction_date'
+            self.transaction_date = Date.parse(v) unless v.nil?
+          else
+            self.send("#{k}=", v) if self.respond_to?(k)
+          end
         end
       end
     end
