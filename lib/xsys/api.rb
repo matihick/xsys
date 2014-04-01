@@ -101,6 +101,31 @@ module Xsys
       request.map { |r| Model::PurchasesPosition.new(r) }
     end
 
+    def self.get_stock_controls(params)
+      request = get_request('/stock_controls', params)
+
+      request.map { |r| Model::StockControl.new(r) }
+    end
+
+    def self.get_stock_control(params={})
+      request = get_request("/stock_controls/#{params[:transaction_id]}", {
+        shop_code: params[:shop_code],
+        category_id: params[:category_id]
+      })
+
+      Model::StockControl.new(request)
+    end
+
+    def self.get_stock_control_items(params={})
+      request = get_request("/stock_controls/#{params[:transaction_id]}", {
+        shop_code: params[:shop_code],
+        category_id: params[:category_id]
+      })
+
+      request.map { |r| Model::StockControlItem.new(r) }
+    end
+
+
     private
 
     def self.get_request(action, params={})

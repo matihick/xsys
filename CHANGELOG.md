@@ -69,3 +69,7 @@
 ## v0.0.18
 
 * Added sellable stock total
+
+## v0.0.19
+
+* Added stock control

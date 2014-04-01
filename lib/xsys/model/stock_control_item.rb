@@ -1,8 +1,8 @@
 module Xsys
   module Model
-    class ProductProvider
-      attr_accessor :id, :name, :address, :zip_code,
-        :phone, :cuit, :active, :kind
+    class StockControlItem
+      attr_accessor :shop_code, :transaction_id, :product_category_id,
+        :product_id, :quantity, :miles, :packages
 
       def initialize(attributes={})
         attributes.each do |k,v|

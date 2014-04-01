@@ -1,11 +1,11 @@
 module Xsys
   module Model
-    class ProductCategory
-      attr_accessor :id, :name
+    class User
+      attr_accessor :id, :name, :shop_code
 
       def initialize(attributes={})
         attributes.each do |k,v|
-          self.send("#{k}=", v) if self.respond_to?(k)
+          self.send("#{k}=", v)
         end
       end
     end

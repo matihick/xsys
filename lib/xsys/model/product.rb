@@ -15,7 +15,7 @@ module Xsys
           elsif k == 'stocks'
             @stocks = v.map { |s| Stock.new(s) }
           else
-            self.send("#{k}=", v)
+            self.send("#{k}=", v) if self.respond_to?(k)
           end
         end
       end
