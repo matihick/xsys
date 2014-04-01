@@ -77,3 +77,7 @@
 ## v0.0.20
 
 * Added users
+
+## v0.0.21
+
+* Updated field to users
