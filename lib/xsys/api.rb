@@ -103,8 +103,8 @@ module Xsys
 
     def self.get_stock_controls(params={})
       request = get_request('/stock_controls', params)
-
-      request.map { |r| Model::StockControl.new(r) }
+      request[:results] = request[:results].map { |r| Model::StockControl.new(r) }
+      request
     end
 
     def self.get_stock_control(params={})

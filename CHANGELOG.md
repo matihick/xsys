@@ -81,3 +81,7 @@
 ## v0.0.21
 
 * Updated field to users
+
+## v0.0.22
+
+* Bugfix stock controls pagination
