@@ -73,3 +73,7 @@
 ## v0.0.19
 
 * Added stock control
+
+## v0.0.20
+
+* Added users

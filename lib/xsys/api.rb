@@ -101,7 +101,7 @@ module Xsys
       request.map { |r| Model::PurchasesPosition.new(r) }
     end
 
-    def self.get_stock_controls(params)
+    def self.get_stock_controls(params={})
       request = get_request('/stock_controls', params)
 
       request.map { |r| Model::StockControl.new(r) }
@@ -125,6 +125,9 @@ module Xsys
       request.map { |r| Model::StockControlItem.new(r) }
     end
 
+    def self.get_users
+      get_request('/users').map { |r| Model::User.new(r) }
+    end
 
     private
 
