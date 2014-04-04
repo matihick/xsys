@@ -96,4 +96,8 @@
 
 ## v0.0.25
 
-* Added transaction methods
+* Bugfixes
+
+## v0.0.26
+
+* Bugfixes

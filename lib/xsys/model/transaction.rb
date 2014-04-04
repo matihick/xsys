@@ -12,7 +12,7 @@ module Xsys
           if k.to_s == 'transaction_date'
             self.transaction_date = Date.parse(v) unless v.nil?
           elsif k.to_s == 'user'
-            self.user = User.new(v)
+            self.user = User.new(v) unless v.nil?
           elsif k.to_s == 'items'
             self.items = v.map { |x| TransactionItem.new(x) }
           else
