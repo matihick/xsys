@@ -1,7 +1,7 @@
 module Xsys
   module Model
     class Transaction
-      attr_accessor :transaction_id, :shop_id, :transaction_kind_id,
+      attr_accessor :id, :shop_id, :transaction_kind_id,
         :receipt_number, :product_id, :client_id, :workshop_id,
         :product_provider_id, :transaction_status_id, :transaction_date,
         :logical_section_id, :physical_section_id, :seller_id, :user_id,
