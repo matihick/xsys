@@ -89,3 +89,7 @@
 ## v0.0.23
 
 * Cast transaction date to date
+
+## v0.0.24
+
+* Added transaction methods

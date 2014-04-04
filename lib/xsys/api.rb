@@ -125,6 +125,20 @@ module Xsys
       request.map { |r| Model::StockControlItem.new(r) }
     end
 
+    def self.get_transactions(params={})
+      request = get_request('/transactions', params)
+
+      request.map { |r| Model::Transaction.new(r) }
+    end
+
+    def self.get_transaction(params={})
+      request = get_request("/transactions/#{params[:id]}", {
+        shop_code: params[:shop_code]
+      })
+
+      Model::Transaction.new(request)
+    end
+
     def self.get_users
       get_request('/users').map { |r| Model::User.new(r) }
     end

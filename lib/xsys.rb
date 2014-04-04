@@ -15,6 +15,8 @@ require 'xsys/model/shop'
 require 'xsys/model/stock'
 require 'xsys/model/stock_control'
 require 'xsys/model/stock_control_item'
+require 'xsys/model/transaction'
+require 'xsys/model/transaction_item'
 require 'xsys/model/user'
 
 require 'xsys/api'
