@@ -93,3 +93,7 @@
 ## v0.0.24
 
 * Added transaction methods
+
+## v0.0.25
+
+* Added transaction methods

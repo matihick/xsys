@@ -128,7 +128,8 @@ module Xsys
     def self.get_transactions(params={})
       request = get_request('/transactions', params)
 
-      request.map { |r| Model::Transaction.new(r) }
+      request[:results] = request[:results].map { |r| Model::Transaction.new(r) }
+      request
     end
 
     def self.get_transaction(params={})
