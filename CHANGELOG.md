@@ -125,3 +125,7 @@
 ## v0.2.2
 
 * Added job event creation date
+
+## v0.2.3
+
+* Cast job event creation date to time
