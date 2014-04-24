@@ -109,3 +109,7 @@
 ## v0.1.0
 
 * redesigned API to minimal functionality
+
+## v0.1.1
+
+* general fixes

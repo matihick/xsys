@@ -6,7 +6,7 @@ module Xsys
     end
 
     def self.get_price_lists(filters={})
-      get_request('/price_lists').map { |r| Model::PriceList.new(r) }
+      get_request('/price_lists')[:body].map { |r| Model::PriceList.new(r) }
     end
 
     def self.get_products(filters={})
@@ -14,7 +14,7 @@ module Xsys
 
       if response[:headers][:link]
         {
-          pagination: Pagination.new(JSON.parse(response.headers[:link])),
+          pagination: Pagination.new(JSON.parse(response[:headers][:link])),
           results: response[:body].map { |r| Model::Product.new(r) }
         }
       else
@@ -31,7 +31,7 @@ module Xsys
 
       if response[:headers][:link]
         {
-          pagination: Pagination.new(JSON.parse(response.headers[:link])),
+          pagination: Pagination.new(JSON.parse(response[:headers][:link])),
           results: response[:body].map { |r| Model::ProductProvider.new(r) }
         }
       else
@@ -40,7 +40,7 @@ module Xsys
     end
 
     def self.get_product_provider(provider_code)
-      Model::ProductProvider.new(get_request("/product_providers/#{provider_code}"))
+      Model::ProductProvider.new(get_request("/product_providers/#{provider_code}")[:body])
     end
 
     def self.get_product_categories(filters={})
@@ -48,7 +48,7 @@ module Xsys
 
       if response[:headers][:link]
         {
-          pagination: Pagination.new(JSON.parse(response.headers[:link])),
+          pagination: Pagination.new(JSON.parse(response[:headers][:link])),
           results: response[:body].map { |r| Model::ProductCategory.new(r) }
         }
       else
@@ -57,7 +57,7 @@ module Xsys
     end
 
     def self.get_product_category(category_code)
-      Model::ProductCategory.new(get_request("/product_categories/#{category_code}"))
+      Model::ProductCategory.new(get_request("/product_categories/#{category_code}")[:body])
     end
 
     def self.get_product_price_lists(filters={})
@@ -65,7 +65,7 @@ module Xsys
 
       if response[:headers][:link]
         {
-          pagination: Pagination.new(JSON.parse(response.headers[:link])),
+          pagination: Pagination.new(JSON.parse(response[:headers][:link])),
           results: response[:body].map { |r| Model::ProductPriceList.new(r) }
         }
       else
@@ -98,7 +98,7 @@ module Xsys
     def self.get_request(action, params={}, headers={})
       begin
         headers.merge!({ authorization: "Token token=\"#{@access_token}\"" })
-        parse_response(RestClient.get("#{@endpoint_url}#{action}", {params: params}.merge(headers)))
+        parse_response(RestClient.get("#{@endpoint}#{action}", {params: params}.merge(headers)))
       rescue => e
         parse_response(e.response)
       end
@@ -107,7 +107,7 @@ module Xsys
     def self.post_request(action, params={}, headers={})
       begin
         headers.merge!({ authorization: "Token token=\"#{@access_token}\"" })
-        parse_response(RestClient.post("#{@endpoint_url}#{action}", params, headers))
+        parse_response(RestClient.post("#{@endpoint}#{action}", params, headers))
       rescue => e
         parse_response(e.response)
       end
@@ -116,7 +116,7 @@ module Xsys
     def self.put_request(action, params={}, headers={})
       begin
         headers.merge!({ authorization: "Token token=\"#{@access_token}\"" })
-        parse_response(RestClient.put("#{@endpoint_url}#{action}", params, headers))
+        parse_response(RestClient.put("#{@endpoint}#{action}", params, headers))
       rescue => e
         parse_response(e.response)
       end

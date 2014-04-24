@@ -18,7 +18,7 @@ module Xsys
           elsif k == 'stocks'
             @stocks = v.map { |s| Stock.new(s) }
           elsif k == 'prices'
-            @prices = v.map { |s| ProductListPrice.new(s) }
+            @prices = v.map { |s| ProductPriceList.new(s) }
           else
             self.send("#{k}=", v) if self.respond_to?(k)
           end
@@ -55,7 +55,7 @@ module Xsys
         }.try(:markup) || 0.0
       end
 
-      def price_with_list(price_list_code)
+      def price_in_list(price_list_code)
         prices.find { |p|
           p.price_list_code.to_i == price_list_code.to_i
         }.try(:total_price) || 0.0
