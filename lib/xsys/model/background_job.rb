@@ -2,7 +2,7 @@ module Xsys
   module Model
     class BackgroundJob
       def self.attr_list
-        [:code, :shop_code, :label, :arguments, :status, :processed_items
+        [:code, :shop_code, :label, :arguments, :status, :processed_items,
          :total_items, :observations, :started_at, :ended_at, :events]
       end
 

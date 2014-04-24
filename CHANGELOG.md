@@ -117,3 +117,7 @@
 ## v0.2.0
 
 * Added background jobs
+
+## v0.2.1
+
+* Fixed mistyped comma
