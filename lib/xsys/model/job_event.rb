@@ -2,7 +2,7 @@ module Xsys
   module Model
     class JobEvent
       def self.attr_list
-        [:description]
+        [:description, :created_at]
       end
 
       attr_reader *attr_list

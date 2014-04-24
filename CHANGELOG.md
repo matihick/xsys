@@ -121,3 +121,7 @@
 ## v0.2.1
 
 * Fixed mistyped comma
+
+## v0.2.2
+
+* Added job event creation date
