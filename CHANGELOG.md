@@ -129,3 +129,7 @@
 ## v0.2.3
 
 * Cast job event creation date to time
+
+## v0.2.4
+
+* Fixed null end date in background jobs

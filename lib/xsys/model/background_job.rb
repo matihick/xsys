@@ -15,7 +15,7 @@ module Xsys
           elsif k.to_s == 'started_at'
             @started_at = Time.parse(v)
           elsif k.to_s == 'ended_at'
-            @ended_at = Time.parse(v)
+            @ended_at = Time.parse(v) unless v.nil?
           else
             self.send("#{k}=", v) if self.respond_to?(k)
           end
