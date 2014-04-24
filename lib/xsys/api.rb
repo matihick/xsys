@@ -5,6 +5,19 @@ module Xsys
       @access_token = args[:access_token]
     end
 
+    def self.get_background_job(code)
+      Model::BackgroundJob.new(get_request("/background_jobs/#{code}")[:body])
+    end
+
+    def self.update_background_job(code, params)
+      Model::BackgroundJob.new(put_request("/background_jobs/#{code}", params)[:body])
+    end
+
+    def self.add_background_job_event(code, event_description)
+      params = { description: event_description }
+      Model::JobEvent.new(post_request("/background_jobs/#{code}/job_events", params)[:body])
+    end
+
     def self.get_price_lists(filters={})
       get_request('/price_lists')[:body].map { |r| Model::PriceList.new(r) }
     end

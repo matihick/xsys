@@ -10,7 +10,11 @@ module Xsys
 
       def initialize(attributes={})
         attributes.each do |k, v|
-          self.send("#{k}=", v) if self.respond_to?(k)
+          if k.to_s == 'price_updated_at'
+            @price_updated_at = Time.parse(v)
+          else
+            self.send("#{k}=", v) if self.respond_to?(k)
+          end
         end
       end
 

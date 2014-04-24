@@ -11,14 +11,16 @@ module Xsys
 
       def initialize(attributes={})
         attributes.each do |k, v|
-          if k == 'category'
+          if k.to_s == 'category'
             @category = ProductCategory.new(v)
-          elsif k == 'provider'
+          elsif k.to_s == 'provider'
             @provider = ProductProvider.new(v)
-          elsif k == 'stocks'
+          elsif k.to_s == 'stocks'
             @stocks = v.map { |s| Stock.new(s) }
-          elsif k == 'prices'
+          elsif k.to_s == 'prices'
             @prices = v.map { |s| ProductPriceList.new(s) }
+          elsif k.to_s == 'cost_updated_at'
+            @cost_updated_at = Time.parse(v)
           else
             self.send("#{k}=", v) if self.respond_to?(k)
           end

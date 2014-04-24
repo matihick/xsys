@@ -104,12 +104,16 @@
 
 ## v0.0.27
 
-* renamed transaction_id to id in transaction
+* Renamed transaction_id to id in transaction
 
 ## v0.1.0
 
-* redesigned API to minimal functionality
+* Redesigned API to minimal functionality
 
 ## v0.1.1
 
-* general fixes
+* General fixes
+
+## v0.2.0
+
+* Added background jobs
