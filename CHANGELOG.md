@@ -105,3 +105,7 @@
 ## v0.0.27
 
 * renamed transaction_id to id in transaction
+
+## v0.1.0
+
+* redesigned API to minimal functionality

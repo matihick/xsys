@@ -1,8 +1,9 @@
 module Xsys
   module Model
-    class PriceList
+    class ProductPriceList
       def self.attr_list
-        [:code, :name]
+        [:product_code, :product_name, :price_list_code,
+         :total_price, :markup, :price_updated_at]
       end
 
       attr_reader *attr_list
