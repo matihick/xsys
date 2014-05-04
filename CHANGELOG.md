@@ -133,3 +133,7 @@
 ## v0.2.4
 
 * Fixed null end date in background jobs
+
+## v0.2.5
+
+* Endpoint default changed

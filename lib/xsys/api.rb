@@ -1,29 +1,29 @@
 module Xsys
   class Api
     def self.configure(args={})
-      @endpoint = (args[:endpoint] || 'https://gestion.lhconfort.com.ar/api')
+      @endpoint = (args[:endpoint] || 'https://gestion.lhconfort.com.ar')
       @access_token = args[:access_token]
     end
 
     def self.get_background_job(code)
-      Model::BackgroundJob.new(get_request("/background_jobs/#{code}")[:body])
+      Model::BackgroundJob.new(get_request("/api/background_jobs/#{code}")[:body])
     end
 
     def self.update_background_job(code, params)
-      Model::BackgroundJob.new(put_request("/background_jobs/#{code}", params)[:body])
+      Model::BackgroundJob.new(put_request("/api/background_jobs/#{code}", params)[:body])
     end
 
     def self.add_background_job_event(code, event_description)
       params = { description: event_description }
-      Model::JobEvent.new(post_request("/background_jobs/#{code}/job_events", params)[:body])
+      Model::JobEvent.new(post_request("/api/background_jobs/#{code}/job_events", params)[:body])
     end
 
     def self.get_price_lists(filters={})
-      get_request('/price_lists')[:body].map { |r| Model::PriceList.new(r) }
+      get_request('/api/price_lists')[:body].map { |r| Model::PriceList.new(r) }
     end
 
     def self.get_products(filters={})
-      response = get_request('/products', filters)
+      response = get_request('/api/products', filters)
 
       if response[:headers][:link]
         {
@@ -36,11 +36,11 @@ module Xsys
     end
 
     def self.get_product(product_code)
-      Model::Product.new(get_request("/products/#{product_code}")[:body])
+      Model::Product.new(get_request("/api/products/#{product_code}")[:body])
     end
 
     def self.get_product_providers(filters={})
-      response = get_request('/product_providers', filters)
+      response = get_request('/api/product_providers', filters)
 
       if response[:headers][:link]
         {
@@ -53,11 +53,11 @@ module Xsys
     end
 
     def self.get_product_provider(provider_code)
-      Model::ProductProvider.new(get_request("/product_providers/#{provider_code}")[:body])
+      Model::ProductProvider.new(get_request("/api/product_providers/#{provider_code}")[:body])
     end
 
     def self.get_product_categories(filters={})
-      response = get_request('/product_categories', filters)
+      response = get_request('/api/product_categories', filters)
 
       if response[:headers][:link]
         {
@@ -70,11 +70,11 @@ module Xsys
     end
 
     def self.get_product_category(category_code)
-      Model::ProductCategory.new(get_request("/product_categories/#{category_code}")[:body])
+      Model::ProductCategory.new(get_request("/api/product_categories/#{category_code}")[:body])
     end
 
     def self.get_product_price_lists(filters={})
-      response = get_request('/product_price_lists', filters)
+      response = get_request('/api/product_price_lists', filters)
 
       if response[:headers][:link]
         {
@@ -87,23 +87,23 @@ module Xsys
     end
 
     def self.get_sellers
-      get_request('/sellers')[:body].map { |r| Model::Seller.new(r) }
+      get_request('/api/sellers')[:body].map { |r| Model::Seller.new(r) }
     end
 
     def self.get_shops(kind=nil)
       shop_kinds = [:commercial, :virtual, :physical, :stockable, :service, :with_target]
 
       if kind.nil?
-        get_request('/shops')[:body].map { |r| Model::Shop.new(r) }
+        get_request('/api/shops')[:body].map { |r| Model::Shop.new(r) }
       elsif shop_kinds.include?(kind.to_sym)
-        get_request("/shops/#{kind}")[:body].map { |r| Model::Shop.new(r) }
+        get_request("/api/shops/#{kind}")[:body].map { |r| Model::Shop.new(r) }
       else
         []
       end
     end
 
     def self.get_users
-      get_request('/users')[:body].map { |r| Model::User.new(r) }
+      get_request('/api/users')[:body].map { |r| Model::User.new(r) }
     end
 
     private
