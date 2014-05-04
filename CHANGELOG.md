@@ -137,3 +137,7 @@
 ## v0.2.5
 
 * Endpoint default changed
+
+## v0.2.6
+
+* Added methods to update cash withdrawals

@@ -102,8 +102,18 @@ module Xsys
       end
     end
 
-    def self.get_users
-      get_request('/api/users')[:body].map { |r| Model::User.new(r) }
+    def self.update_cash_withdrawals(shop_code, cash_withdrawals)
+      post_request('/api/cash_withdrawals', {
+        shop_code: shop_code,
+        cash_withdrawals: cash_withdrawals
+      })[:body]
+    end
+
+    def self.update_cash_withdrawal_items(shop_code, cash_withdrawal_items)
+      post_request('/api/cash_withdrawal_items', {
+        shop_code: shop_code,
+        cash_withdrawals: cash_withdrawal_items
+      })[:body]
     end
 
     private
