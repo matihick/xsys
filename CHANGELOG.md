@@ -141,3 +141,7 @@
 ## v0.2.6
 
 * Added methods to update cash withdrawals
+
+## v0.2.7
+
+* Bugfixed param cash withdrawal items

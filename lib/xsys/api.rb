@@ -112,7 +112,7 @@ module Xsys
     def self.update_cash_withdrawal_items(shop_code, cash_withdrawal_items)
       post_request('/api/cash_withdrawal_items', {
         shop_code: shop_code,
-        cash_withdrawals: cash_withdrawal_items
+        cash_withdrawal_items: cash_withdrawal_items
       })[:body]
     end
 
