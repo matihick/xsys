@@ -8,7 +8,6 @@ require 'xsys/model/product_provider'
 require 'xsys/model/seller'
 require 'xsys/model/shop'
 require 'xsys/model/stock'
-require 'xsys/model/user'
 
 require 'xsys/api'
 require 'xsys/pagination'

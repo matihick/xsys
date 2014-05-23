@@ -149,3 +149,7 @@
 ## v0.2.8
 
 * Changed interface API
+
+## v0.2.9
+
+* Bugfixes
