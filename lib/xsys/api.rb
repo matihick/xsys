@@ -35,8 +35,8 @@ module Xsys
       end
     end
 
-    def self.get_product(product_code)
-      Model::Product.new(get_request("/api/products/#{product_code}")[:body])
+    def self.get_product(product_id)
+      Model::Product.new(get_request("/api/products/#{product_id}")[:body])
     end
 
     def self.get_product_providers(filters={})
@@ -52,8 +52,8 @@ module Xsys
       end
     end
 
-    def self.get_product_provider(provider_code)
-      Model::ProductProvider.new(get_request("/api/product_providers/#{provider_code}")[:body])
+    def self.get_product_provider(provider_id)
+      Model::ProductProvider.new(get_request("/api/product_providers/#{provider_id}")[:body])
     end
 
     def self.get_product_categories(filters={})
@@ -69,8 +69,8 @@ module Xsys
       end
     end
 
-    def self.get_product_category(category_code)
-      Model::ProductCategory.new(get_request("/api/product_categories/#{category_code}")[:body])
+    def self.get_product_category(category_id)
+      Model::ProductCategory.new(get_request("/api/product_categories/#{category_id}")[:body])
     end
 
     def self.get_product_price_lists(filters={})

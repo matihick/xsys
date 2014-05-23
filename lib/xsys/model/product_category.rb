@@ -2,7 +2,7 @@ module Xsys
   module Model
     class ProductCategory
       def self.attr_list
-        [:code, :name]
+        [:id, :name]
       end
 
       attr_reader *attr_list

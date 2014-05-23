@@ -2,7 +2,7 @@ module Xsys
   module Model
     class ProductProvider
       def self.attr_list
-        [:code, :name, :address, :zip_code, :phone,
+        [:id, :name, :address, :zip_code, :phone,
          :cuit, :email, :province, :locality, :vat_kind]
       end
 

@@ -2,7 +2,7 @@ module Xsys
   module Model
     class ProductPriceList
       def self.attr_list
-        [:product_code, :product_name, :price_list_code,
+        [:product_id, :product_name, :price_list_id,
          :total_price, :markup, :price_updated_at]
       end
 

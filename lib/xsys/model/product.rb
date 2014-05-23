@@ -2,8 +2,8 @@ module Xsys
   module Model
     class Product
       def self.attr_list
-        [:code, :name, :cost_updated_at, :sellable, :product_category_code,
-         :product_provider_code, :vat_rate, :taxed_cost, :vat_cost, :total_cost,
+        [:id, :name, :cost_updated_at, :sellable, :product_category_id,
+         :product_provider_id, :vat_rate, :taxed_cost, :vat_cost, :total_cost,
          :pending_ordered_quantity, :stocks, :prices, :category, :provider]
       end
 
@@ -27,7 +27,17 @@ module Xsys
         end
       end
 
-      def stock_total
+      def sellable_stocks_quantity
+        stocks.find_all { |s|
+          !['SER', 'EXT'].include?(s.shop_code)
+        }.map(&:quantity).sum
+      end
+
+      def service_stocks_quantity
+        stocks_quantity - sellable_stocks_quantity
+      end
+
+      def stocks_quantity
         stocks.map(&:quantity).sum
       end
 
@@ -45,21 +55,21 @@ module Xsys
         }.try(:quantity).to_i
       end
 
-      def price_date_for_list(price_list_code)
+      def price_date_for_list(price_list_id)
         prices.find { |p|
-          p.price_list_code.to_i == price_list_code.to_i
+          p.price_list_id.to_i == price_list_id.to_i
         }.try(:price_updated_at)
       end
 
-      def markup_with_list(price_list_code)
+      def markup_with_list(price_list_id)
         prices.find { |p|
-          p.price_list_code.to_i == price_list_code.to_i
+          p.price_list_id.to_i == price_list_id.to_i
         }.try(:markup) || 0.0
       end
 
-      def price_in_list(price_list_code)
+      def price_in_list(price_list_id)
         prices.find { |p|
-          p.price_list_code.to_i == price_list_code.to_i
+          p.price_list_id.to_i == price_list_id.to_i
         }.try(:total_price) || 0.0
       end
 

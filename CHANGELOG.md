@@ -145,3 +145,7 @@
 ## v0.2.7
 
 * Bugfixed param cash withdrawal items
+
+## v0.2.8
+
+* Changed interface API
