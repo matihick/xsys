@@ -27,14 +27,24 @@ module Xsys
         end
       end
 
-      def sellable_stocks_quantity
+      def sellable_stocks
         stocks.find_all { |s|
           !['SER', 'EXT'].include?(s.shop_code)
-        }.map(&:quantity).sum
+        }
+      end
+
+      def sellable_stocks_quantity
+        sellable_stocks.map(&:quantity).sum
+      end
+
+      def service_stocks
+        stocks.find_all { |s|
+          ['SER', 'EXT'].include?(s.shop_code)
+        }
       end
 
       def service_stocks_quantity
-        stocks_quantity - sellable_stocks_quantity
+        service_stocks.map(&:quantity).sum
       end
 
       def stocks_quantity

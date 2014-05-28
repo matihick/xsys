@@ -153,3 +153,7 @@
 ## v0.2.9
 
 * Bugfixes
+
+## v0.2.10
+
+* Added service and sellable stocks
