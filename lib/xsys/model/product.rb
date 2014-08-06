@@ -20,7 +20,7 @@ module Xsys
           elsif k.to_s == 'prices'
             @prices = v.map { |s| ProductPriceList.new(s) }
           elsif k.to_s == 'cost_updated_at'
-            @cost_updated_at = Time.parse(v)
+            @cost_updated_at = Time.parse(v) unless v.nil?
           else
             self.send("#{k}=", v) if self.respond_to?(k)
           end

@@ -157,3 +157,7 @@
 ## v0.2.10
 
 * Added service and sellable stocks
+
+## v0.2.11
+
+* Bugfixes nil update dates

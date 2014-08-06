@@ -11,7 +11,7 @@ module Xsys
       def initialize(attributes={})
         attributes.each do |k, v|
           if k.to_s == 'price_updated_at'
-            @price_updated_at = Time.parse(v)
+            @price_updated_at = Time.parse(v) unless v.nil?
           else
             self.send("#{k}=", v) if self.respond_to?(k)
           end
