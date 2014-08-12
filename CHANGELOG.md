@@ -165,3 +165,7 @@
 ## v0.2.12
 
 * Added last cost to products
+
+## v0.2.13
+
+* Bugfix last cost

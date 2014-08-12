@@ -23,7 +23,7 @@ module Xsys
           elsif k.to_s == 'cost_updated_at'
             @cost_updated_at = Time.parse(v) unless v.nil?
           elsif k.to_s == 'last_cost_updated_at'
-            @cost_updated_at = Time.parse(v) unless v.nil?
+            @last_cost_updated_at = Time.parse(v) unless v.nil?
           else
             self.send("#{k}=", v) if self.respond_to?(k)
           end
