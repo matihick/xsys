@@ -161,3 +161,7 @@
 ## v0.2.11
 
 * Bugfixes nil update dates
+
+## v0.2.12
+
+* Added last cost to products
