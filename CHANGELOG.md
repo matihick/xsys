@@ -169,3 +169,7 @@
 ## v0.2.13
 
 * Bugfix last cost
+
+## v0.2.14
+
+* Fixed runtime dependencies
