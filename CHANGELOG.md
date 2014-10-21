@@ -173,3 +173,7 @@
 ## v0.2.14
 
 * Fixed runtime dependencies
+
+## v0.2.15
+
+* Added last price update to products
