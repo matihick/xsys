@@ -177,3 +177,7 @@
 ## v0.2.15
 
 * Added last price update to products
+
+## v0.3.0
+
+* Added search by product ids and renamed product search method

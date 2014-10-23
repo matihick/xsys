@@ -22,7 +22,7 @@ module Xsys
       get_request('/api/price_lists')[:body].map { |r| Model::PriceList.new(r) }
     end
 
-    def self.get_products(filters={})
+    def self.search_products(filters={})
       response = get_request('/api/products', filters)
 
       if response[:headers][:link]
@@ -33,6 +33,12 @@ module Xsys
       else
         response[:body].map { |r| Model::Product.new(r) }
       end
+    end
+
+    def self.search_product_ids(filters={})
+      response = get_request('/api/product_ids', filters)
+
+      response[:body]['product_ids']
     end
 
     def self.get_product(product_id)
