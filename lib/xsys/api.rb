@@ -42,7 +42,13 @@ module Xsys
     end
 
     def self.get_product(product_id)
-      Model::Product.new(get_request("/api/products/#{product_id}")[:body])
+      response_body = get_request("/api/products/#{product_id}")[:body]
+
+      if response_body == 'null'
+        nil
+      else
+        Model::Product.new(get_request("/api/products/#{product_id}")[:body])
+      end
     end
 
     def self.get_product_providers(filters={})

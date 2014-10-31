@@ -181,3 +181,7 @@
 ## v0.3.0
 
 * Added search by product ids and renamed product search method
+
+## v0.3.1
+
+* Return null if product not existing
