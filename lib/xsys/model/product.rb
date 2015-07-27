@@ -13,11 +13,11 @@ module Xsys
       def initialize(attributes={})
         attributes.each do |k, v|
           if k.to_s == 'category'
-            @category = ProductCategory.new(v)
+            @category = ProductCategory.new(v) unless v.nil?
           elsif k.to_s == 'provider'
-            @provider = ProductProvider.new(v)
+            @provider = ProductProvider.new(v) unless v.nil?
           elsif k.to_s == 'stocks'
-            @stocks = v.map { |s| Stock.new(s) }
+            @stocks = v.map { |s| Stock.new(s) } unless v.nil?
           elsif k.to_s == 'prices'
             @prices = v.map { |s| ProductPriceList.new(s) }
           elsif ['cost_updated_at', 'last_cost_updated_at', 'price_updated_at'].include?(k.to_s)

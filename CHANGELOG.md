@@ -185,3 +185,7 @@
 ## v0.3.1
 
 * Return null if product not existing
+
+## v0.3.2
+
+* Fixed cases when nil product provider or product category
