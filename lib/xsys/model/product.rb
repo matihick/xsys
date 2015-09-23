@@ -11,6 +11,10 @@ module Xsys
       attr_reader *attr_list
 
       def initialize(attributes={})
+        time_fields = ['cost_updated_at', 'last_cost_updated_at', 'price_updated_at']
+        decimal_fields = ['vat_rate', 'taxed_cost', 'vat_cost', 'total_cost'
+          'last_total_cost']
+
         attributes.each do |k, v|
           if k.to_s == 'category'
             @category = ProductCategory.new(v) unless v.nil?
@@ -20,8 +24,10 @@ module Xsys
             @stocks = v.map { |s| Stock.new(s) } unless v.nil?
           elsif k.to_s == 'prices'
             @prices = v.map { |s| ProductPriceList.new(s) }
-          elsif ['cost_updated_at', 'last_cost_updated_at', 'price_updated_at'].include?(k.to_s)
-            self.send("#{k}=", Time.parse(v))  unless v.nil?
+          elsif time_fields.include?(k.to_s)
+            self.send("#{k}=", Time.parse(v)) unless v.nil?
+          elsif decimal_fields.include?(k.to_s)
+            self.send("#{k}=", BigDecimal.new(v)) unless v.nil?
           else
             self.send("#{k}=", v) if self.respond_to?(k)
           end

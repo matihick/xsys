@@ -189,3 +189,7 @@
 ## v0.3.2
 
 * Fixed cases when nil product provider or product category
+
+## v0.4.0
+
+* Added support for bigdecimal fields

@@ -9,9 +9,14 @@ module Xsys
       attr_reader *attr_list
 
       def initialize(attributes={})
+        time_fields = ['price_updated_at']
+        decimal_fields = ['total_price']
+
         attributes.each do |k, v|
-          if k.to_s == 'price_updated_at'
-            @price_updated_at = Time.parse(v) unless v.nil?
+          if time_fields.include?(k.to_s)
+            self.send("#{k}=", Time.parse(v)) unless v.nil?
+          elsif decimal_fields.include?(k.to_s)
+            self.send("#{k}=", BigDecimal.new(v)) unless v.nil?
           else
             self.send("#{k}=", v) if self.respond_to?(k)
           end
