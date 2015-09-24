@@ -12,8 +12,7 @@ module Xsys
 
       def initialize(attributes={})
         time_fields = ['cost_updated_at', 'last_cost_updated_at', 'price_updated_at']
-        decimal_fields = ['vat_rate', 'taxed_cost', 'vat_cost', 'total_cost'
-          'last_total_cost']
+        decimal_fields = ['vat_rate', 'taxed_cost', 'vat_cost', 'total_cost', 'last_total_cost']
 
         attributes.each do |k, v|
           if k.to_s == 'category'

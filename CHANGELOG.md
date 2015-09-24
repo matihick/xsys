@@ -193,3 +193,7 @@
 ## v0.4.0
 
 * Added support for bigdecimal fields
+
+## v0.4.1
+
+* Bugfix syntax error on products
