@@ -197,3 +197,7 @@
 ## v0.4.1
 
 * Bugfix syntax error on products
+
+## v0.5.0
+
+* Added sales search
