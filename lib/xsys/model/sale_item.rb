@@ -5,6 +5,7 @@ module Xsys
         [:sale_code, :position, :transaction_number, :shop_code, :product_id, :quantity,
         :taxed_unit_price, :vat_unit_price, :total_unit_price, :taxed_amount, :vat_amount,
         :total_amount, :vat_rate]
+      end
 
       attr_reader *attr_list
 

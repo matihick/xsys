@@ -201,3 +201,7 @@
 ## v0.5.0
 
 * Added sales search
+
+## v0.5.1
+
+* Bugfixes on sales

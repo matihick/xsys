@@ -47,7 +47,7 @@ module Xsys
       if response_body == 'null'
         nil
       else
-        Model::Product.new(get_request("/api/products/#{product_id}")[:body])
+        Model::Product.new(response_body)
       end
     end
 
@@ -126,6 +126,16 @@ module Xsys
         shop_code: shop_code,
         cash_withdrawal_items: cash_withdrawal_items
       })[:body]
+    end
+
+    def self.get_sale(code)
+      response_body = get_request("/api/sales/#{code}")[:body]
+
+      if response_body == 'null'
+        nil
+      else
+        Model::Sale.new(response_body)
+      end
     end
 
     private
