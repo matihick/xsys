@@ -209,3 +209,7 @@
 ## v0.5.2
 
 * Added method to update product price list
+
+## v0.6.0
+
+* Fixed default api and relative paths
