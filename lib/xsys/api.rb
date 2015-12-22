@@ -138,6 +138,10 @@ module Xsys
       end
     end
 
+    def self.update_product_price_list(attrs={})
+      put_request('/product_price_lists', attrs)[:body]
+    end
+
     private
 
     def self.get_request(action, params={}, headers={})

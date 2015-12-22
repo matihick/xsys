@@ -205,3 +205,7 @@
 ## v0.5.1
 
 * Bugfixes on sales
+
+## v0.5.2
+
+* Added method to update product price list
