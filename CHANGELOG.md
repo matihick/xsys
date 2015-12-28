@@ -213,3 +213,7 @@
 ## v0.6.0
 
 * Fixed default api and relative paths
+
+## v0.6.1
+
+* Fixed default url

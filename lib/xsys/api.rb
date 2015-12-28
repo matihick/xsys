@@ -1,7 +1,12 @@
 module Xsys
   class Api
     def self.configure(args={})
-      @endpoint = (args[:endpoint] || 'https://gestion.lhconfort.com.ar/api')
+      if args[:endpoint].present?
+        @endpoint = "#{args[:endpoint]}/api"
+      else
+        @endpoint = "https://gestion.lhconfort.com.ar/api"
+      end
+
       @access_token = args[:access_token]
     end
 
