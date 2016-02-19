@@ -39,8 +39,25 @@ module Xsys
         }
       end
 
-      def sellable_stocks_quantity
-        sellable_stocks.map(&:quantity).sum
+      def sellable_stocks_quantity(options={})
+        result = 0
+        online_shop_codes = ['OL']
+
+        sellable_stocks.each do |stock|
+          if options[:skip_exhibition]
+            if online_shop_codes.include?(stock.shop_code)
+              result += stock.quantity
+            elsif stock.quantity > 0
+              result += (stock.quantity - 1)
+            else
+              result += stock.quantity
+            end
+          else
+            result += stock.quantity
+          end
+        end
+
+        result
       end
 
       def service_stocks

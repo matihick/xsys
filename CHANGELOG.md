@@ -217,3 +217,7 @@
 ## v0.6.1
 
 * Fixed default url
+
+## v0.6.2
+
+* Added param to skip exhibition on sellable stocks quantity
