@@ -221,3 +221,7 @@
 ## v0.6.2
 
 * Added param to skip exhibition on sellable stocks quantity
+
+## v0.6.3
+
+* Bugfix skip exhibition stock

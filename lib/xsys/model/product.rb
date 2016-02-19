@@ -42,10 +42,12 @@ module Xsys
       def sellable_stocks_quantity(options={})
         result = 0
         online_shop_codes = ['OL']
+        deposit_shop_codes = ['ADM']
+        no_exhibition_shop_codes = online_shop_codes + deposit_shop_codes
 
         sellable_stocks.each do |stock|
           if options[:skip_exhibition]
-            if online_shop_codes.include?(stock.shop_code)
+            if no_exhibition_shop_codes.include?(stock.shop_code)
               result += stock.quantity
             elsif stock.quantity > 0
               result += (stock.quantity - 1)
