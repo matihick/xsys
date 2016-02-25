@@ -5,7 +5,7 @@ module Xsys
         [:id, :name, :cost_updated_at, :sellable, :product_category_id,
          :product_provider_id, :vat_rate, :taxed_cost, :vat_cost, :total_cost,
          :pending_ordered_quantity, :stocks, :prices, :category, :provider,
-         :last_total_cost, :last_cost_updated_at, :price_updated_at]
+         :last_total_cost, :last_cost_updated_at, :price_updated_at, :online_stock]
       end
 
       attr_reader *attr_list

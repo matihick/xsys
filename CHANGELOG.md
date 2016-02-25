@@ -225,3 +225,7 @@
 ## v0.6.3
 
 * Bugfix skip exhibition stock
+
+## v0.6.4
+
+* Added method to get online stock
