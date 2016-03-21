@@ -99,13 +99,13 @@ module Xsys
       def markup_with_list(price_list_id)
         prices.find { |p|
           p.price_list_id.to_i == price_list_id.to_i
-        }.try(:markup) || 0.0
+        }.try(:markup) || BigDecimal.new('0.0')
       end
 
       def price_in_list(price_list_id)
         prices.find { |p|
           p.price_list_id.to_i == price_list_id.to_i
-        }.try(:total_price) || 0.0
+        }.try(:total_price) || BigDecimal.new('0.0')
       end
 
       private

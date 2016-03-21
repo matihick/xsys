@@ -229,3 +229,7 @@
 ## v0.6.4
 
 * Added method to get online stock
+
+## v0.6.5
+
+* Fixed default on price list from float to bigdecimal
