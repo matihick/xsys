@@ -233,3 +233,7 @@
 ## v0.6.5
 
 * Fixed default on price list from float to bigdecimal
+
+## v0.7.0
+
+* Updated shop attributes

@@ -3,7 +3,9 @@ module Xsys
     class Shop
       def self.attr_list
         [:id, :code, :name, :stock_description, :commercial,
-         :virtual, :stockable, :has_target, :service, :physical_shop_code]
+        :virtual, :stockable, :has_target, :service, :physical_shop_code,
+        :position, :has_stock_control, :has_exhibition, :stock_sellable,
+        :stock_sellable, :enabled, :physical_shop_id, :last_update]
       end
 
       attr_reader *attr_list
@@ -34,8 +36,20 @@ module Xsys
         service == true
       end
 
-      def with_target?
-        with_target == true
+      def has_target?
+        has_target == true
+      end
+
+      def has_exhibition?
+        has_exhibition == true
+      end
+
+      def stock_sellable?
+        stock_sellable == true
+      end
+
+      def enabled?
+        enabled == true
       end
 
       private
