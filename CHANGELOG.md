@@ -241,3 +241,7 @@
 ## v0.8.0
 
 * Added method to update user
+
+## v0.8.1
+
+* Fixed on update product response

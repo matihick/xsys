@@ -146,7 +146,7 @@ module Xsys
     end
 
     def self.update_product(product_id, attrs={})
-      put_request("/products/#{product_id}", attrs)[:body]
+      Model::Product(put_request("/products/#{product_id}", attrs)[:body])
     end
 
     def self.update_product_price_list(attrs={})
