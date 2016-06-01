@@ -237,3 +237,7 @@
 ## v0.7.0
 
 * Updated shop attributes
+
+## v0.8.0
+
+* Added method to update user

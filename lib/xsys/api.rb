@@ -8,6 +8,8 @@ module Xsys
       end
 
       @access_token = args[:access_token]
+
+      self
     end
 
     def self.get_background_job(code)
@@ -141,6 +143,10 @@ module Xsys
       else
         Model::Sale.new(response_body)
       end
+    end
+
+    def self.update_product(product_id, attrs={})
+      put_request("/products/#{product_id}", attrs)[:body]
     end
 
     def self.update_product_price_list(attrs={})
