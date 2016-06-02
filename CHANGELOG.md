@@ -245,3 +245,7 @@
 ## v0.8.1
 
 * Fixed on update product response
+
+## v0.8.2
+
+* Bugfixes updating product
