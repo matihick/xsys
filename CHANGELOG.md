@@ -249,3 +249,7 @@
 ## v0.8.2
 
 * Bugfixes updating product
+
+## v0.8.3
+
+* Added attributes to stocks

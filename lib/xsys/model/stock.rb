@@ -2,7 +2,7 @@ module Xsys
   module Model
     class Stock
       def self.attr_list
-        [:shop_code, :quantity]
+        [:shop_code, :quantity, :shop_has_exhibition, :shop_service]
       end
 
       attr_reader *attr_list
