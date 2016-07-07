@@ -42,7 +42,7 @@ module Xsys
 
         sellable_stocks.each do |stock|
           if options[:skip_exhibition]
-            if stock.shop_has_exhibition
+            if !stock.shop_has_exhibition
               result += stock.quantity
             elsif stock.quantity > 0
               result += (stock.quantity - 1)
