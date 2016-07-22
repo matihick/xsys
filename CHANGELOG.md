@@ -257,3 +257,7 @@
 ## v0.8.4
 
 * Added attributes to stocks
+
+## v0.8.5
+
+* Added attributes to products
