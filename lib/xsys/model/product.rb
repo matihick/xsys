@@ -6,7 +6,8 @@ module Xsys
          :product_provider_id, :vat_rate, :taxed_cost, :vat_cost, :total_cost,
          :pending_ordered_quantity, :stocks, :prices, :category, :provider,
          :last_total_cost, :last_cost_updated_at, :price_updated_at, :online_stock,
-         :product_size_code, :weight, :length, :width, :height, :packages_quantity
+         :product_size_code, :weight, :length, :width, :height, :packages_quantity,
+         :ean, :packages
        ]
       end
 

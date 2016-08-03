@@ -261,3 +261,7 @@
 ## v0.8.5
 
 * Added attributes to products
+
+## v0.8.6
+
+* Changed attributes to products
