@@ -265,3 +265,7 @@
 ## v0.8.6
 
 * Changed attributes to products
+
+## v0.8.7
+
+* Added price attributes
