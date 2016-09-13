@@ -269,3 +269,7 @@
 ## v0.8.7
 
 * Added price attributes
+
+## v0.9.0
+
+* Added brand and model to products
