@@ -81,10 +81,22 @@ module Xsys
         }.map(&:quantity).sum
       end
 
-      def stock_at(shop_code)
-        stocks.find { |s|
+      def stock_at(shop_code, options={})
+        stock = stocks.find { |s|
           s.shop_code.to_s.upcase == shop_code.to_s.upcase
-        }.try(:quantity).to_i
+        }
+
+        if options[:skip_exhibition]
+          if !stock.shop_has_exhibition
+            stock.quantity
+          elsif stock.quantity > 0
+            (stock.quantity - 1)
+          else
+            stock.quantity
+          end
+        else
+          stock.quantity
+        end
       end
 
       def price_date_for_list(price_list_id)

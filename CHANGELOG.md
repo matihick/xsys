@@ -273,3 +273,7 @@
 ## v0.9.0
 
 * Added brand and model to products
+
+## v0.9.1
+
+* Added option to skip exhibition getting stock from a single shop
