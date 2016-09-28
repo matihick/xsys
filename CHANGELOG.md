@@ -277,3 +277,7 @@
 ## v0.9.1
 
 * Added option to skip exhibition getting stock from a single shop
+
+## v0.9.2
+
+* Added credit card price to products

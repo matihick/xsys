@@ -7,7 +7,7 @@ module Xsys
          :pending_ordered_quantity, :stocks, :prices, :category, :provider,
          :last_total_cost, :last_cost_updated_at, :price_updated_at, :online_stock,
          :product_size_code, :weight, :length, :width, :height, :packages_quantity,
-         :ean, :packages, :regular_price, :reduced_price, :web_price, :brand, :model
+         :ean, :packages, :regular_price, :reduced_price, :credit_card_price, :brand, :model
        ]
       end
 
@@ -16,7 +16,7 @@ module Xsys
       def initialize(attributes={})
         time_fields = ['cost_updated_at', 'last_cost_updated_at', 'price_updated_at']
         decimal_fields = ['vat_rate', 'taxed_cost', 'vat_cost', 'total_cost', 'last_total_cost',
-          'regular_price', 'reduced_price', 'web_price']
+          'regular_price', 'reduced_price', 'credit_card_price']
 
         attributes.each do |k, v|
           if k.to_s == 'category'
