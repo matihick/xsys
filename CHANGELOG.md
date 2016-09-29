@@ -289,3 +289,7 @@
 ## v0.10.1
 
 * Added missing attributes for cost
+
+## v0.10.2
+
+* Added missing attributes for product price
