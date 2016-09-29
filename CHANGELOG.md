@@ -281,3 +281,7 @@
 ## v0.9.2
 
 * Added credit card price to products
+
+## v0.10.0
+
+* Refactor on update fields for cost, last cost and price

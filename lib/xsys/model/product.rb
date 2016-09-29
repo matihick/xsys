@@ -2,10 +2,10 @@ module Xsys
   module Model
     class Product
       def self.attr_list
-        [:id, :name, :cost_updated_at, :sellable, :product_category_id,
+        [:id, :name, :sellable, :product_category_id,
          :product_provider_id, :vat_rate, :taxed_cost, :vat_cost, :total_cost,
          :pending_ordered_quantity, :stocks, :prices, :category, :provider,
-         :last_total_cost, :last_cost_updated_at, :price_updated_at, :online_stock,
+         :last_total_cost, :last_cost_update_date, :last_cost_update_time, :online_stock,
          :product_size_code, :weight, :length, :width, :height, :packages_quantity,
          :ean, :packages, :regular_price, :reduced_price, :credit_card_price, :brand, :model
        ]
@@ -14,7 +14,8 @@ module Xsys
       attr_reader *attr_list
 
       def initialize(attributes={})
-        time_fields = ['cost_updated_at', 'last_cost_updated_at', 'price_updated_at']
+        time_fields = ['cost_update_time', 'last_cost_update_time', 'price_update_time']
+        date_fields = ['cost_update_date', 'last_cost_update_date', 'price_update_date']
         decimal_fields = ['vat_rate', 'taxed_cost', 'vat_cost', 'total_cost', 'last_total_cost',
           'regular_price', 'reduced_price', 'credit_card_price']
 
@@ -29,6 +30,8 @@ module Xsys
             @prices = v.map { |s| ProductPriceList.new(s) }
           elsif time_fields.include?(k.to_s)
             self.send("#{k}=", Time.parse(v)) unless v.nil?
+          elsif date_fields.include?(k.to_s)
+            self.send("#{k}=", Date.parse(v)) unless v.nil?
           elsif decimal_fields.include?(k.to_s)
             self.send("#{k}=", BigDecimal.new(v)) unless v.nil?
           else
@@ -102,7 +105,7 @@ module Xsys
       def price_date_for_list(price_list_id)
         prices.find { |p|
           p.price_list_id.to_i == price_list_id.to_i
-        }.try(:price_updated_at)
+        }.try(:price_update_date)
       end
 
       def markup_with_list(price_list_id)
