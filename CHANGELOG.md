@@ -285,3 +285,7 @@
 ## v0.10.0
 
 * Refactor on update fields for cost, last cost and price
+
+## v0.10.1
+
+* Added missing attributes for cost

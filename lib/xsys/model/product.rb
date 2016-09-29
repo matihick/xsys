@@ -5,7 +5,8 @@ module Xsys
         [:id, :name, :sellable, :product_category_id,
          :product_provider_id, :vat_rate, :taxed_cost, :vat_cost, :total_cost,
          :pending_ordered_quantity, :stocks, :prices, :category, :provider,
-         :last_total_cost, :last_cost_update_date, :last_cost_update_time, :online_stock,
+         :last_total_cost, :cost_update_date, :cost_update_time,
+         :last_cost_update_date, :last_cost_update_time, :online_stock,
          :product_size_code, :weight, :length, :width, :height, :packages_quantity,
          :ean, :packages, :regular_price, :reduced_price, :credit_card_price, :brand, :model
        ]
