@@ -293,3 +293,7 @@
 ## v0.10.2
 
 * Added missing attributes for product price
+
+## v0.10.3
+
+* Added has stock on hold attribute to products

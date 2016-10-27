@@ -8,7 +8,8 @@ module Xsys
          :last_total_cost, :last_taxed_cost, :cost_update_date, :cost_update_time,
          :last_cost_update_date, :last_cost_update_time, :price_update_date, :price_update_time,
          :online_stock, :product_size_code, :weight, :length, :width, :height, :packages_quantity,
-         :ean, :packages, :regular_price, :reduced_price, :credit_card_price, :brand, :model
+         :ean, :packages, :regular_price, :reduced_price, :credit_card_price, :brand, :model,
+         :has_stock_on_hold
        ]
       end
 
