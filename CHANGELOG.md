@@ -297,3 +297,7 @@
 ## v0.10.3
 
 * Added has stock on hold attribute to products
+
+## v0.10.4
+
+* Added has availability_date attribute to products
