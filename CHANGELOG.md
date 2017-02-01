@@ -305,3 +305,7 @@
 ## v0.11
 
 * Changed stock to show reserved, available quantity and removed shop fields
+
+## v0.11.1
+
+* Added shop_service

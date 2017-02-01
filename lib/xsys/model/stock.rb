@@ -10,7 +10,8 @@ module Xsys
           :quantity_update_time,
           :quantity_update_date,
           :reserved_update_time,
-          :reserved_update_date
+          :reserved_update_date,
+          :shop_service
         ]
       end
 
