@@ -301,3 +301,7 @@
 ## v0.10.4
 
 * Added has availability_date attribute to products
+
+## v0.11
+
+* Changed stock to show reserved, available quantity and removed shop fields
