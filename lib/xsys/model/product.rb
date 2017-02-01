@@ -2,15 +2,13 @@ module Xsys
   module Model
     class Product
       def self.attr_list
-        [:id, :name, :sellable, :product_category_id,
-         :product_provider_id, :vat_rate, :taxed_cost, :vat_cost, :total_cost,
-         :pending_ordered_quantity, :stocks, :prices, :category, :provider,
-         :last_total_cost, :last_taxed_cost, :cost_update_date, :cost_update_time,
-         :last_cost_update_date, :last_cost_update_time, :price_update_date, :price_update_time,
-         :online_stock, :product_size_code, :weight, :length, :width, :height, :packages_quantity,
-         :ean, :packages, :regular_price, :reduced_price, :credit_card_price, :brand, :model,
-         :has_stock_on_hold, :availability_date
-       ]
+        [:id, :name, :sellable, :product_category_id, :product_provider_id, :vat_rate,
+         :taxed_cost, :vat_cost, :total_cost, :pending_ordered_quantity, :stocks, :prices,
+         :category, :provider, :last_total_cost, :last_taxed_cost, :cost_update_date,
+         :cost_update_time, :last_cost_update_date, :last_cost_update_time, :price_update_date,
+         :price_update_time, :online_stock, :product_size_code, :weight, :length, :width,
+         :height, :packages_quantity, :ean, :packages, :regular_price, :reduced_price,
+         :credit_card_price, :brand, :model, :has_stock_on_hold, :availability_date]
       end
 
       attr_reader *attr_list
@@ -42,46 +40,38 @@ module Xsys
         end
       end
 
-      def sellable_stocks
-        stocks.find_all { |s| !s.shop_service }
-      end
-
-      def sellable_stocks_quantity(options={})
-        result = 0
-
-        sellable_stocks.each do |stock|
-          result += stock.quantity
+      def stock_quantity(shop_codes=[])
+        if shop_codes.empty?
+          stocks.map(&:quantity).sum
+        else
+          stocks.find_all { |s| shop_codes.include?(s.code) }.map(&:quantity).sum
         end
-
-        result
       end
 
-      def service_stocks
-        stocks.find_all { |s| s.shop_service }
+      def stock_available(shop_codes=[])
+        if shop_codes.empty?
+          stocks.map(&:available).sum
+        else
+          stocks.find_all { |s| shop_codes.include?(s.code) }.map(&:available).sum
+        end
       end
 
-      def service_stocks_quantity
-        service_stocks.map(&:quantity).sum
+      def stock_reserved(shop_codes=[])
+        if shop_codes.empty?
+          stocks.map(&:reserved).sum
+        else
+          stocks.find_all { |s| shop_codes.include?(s.code) }.map(&:reserved).sum
+        end
       end
 
-      def stocks_quantity
-        stocks.map(&:quantity).sum
-      end
-
-      def stock_sum(shop_codes)
-        formatted_shop_codes = shop_codes.map(&:to_s).map(&:upcase)
-
-        stocks.find_all { |s|
-          formatted_shop_codes.include?(s.shop_code.to_s.upcase)
-        }.map(&:quantity).sum
-      end
-
-      def stock_at(shop_code, options={})
-        stock = stocks.find { |s|
+      def stock_at(shop_code)
+        stocks.find { |s|
           s.shop_code.to_s.upcase == shop_code.to_s.upcase
         }
+      end
 
-        stock.quantity
+      def sellable_stocks
+        stocks.find_all { |x| x.sellable }
       end
 
       def price_date_for_list(price_list_id)

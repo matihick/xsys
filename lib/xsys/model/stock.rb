@@ -11,7 +11,7 @@ module Xsys
           :quantity_update_date,
           :reserved_update_time,
           :reserved_update_date,
-          :shop_service
+          :sellable
         ]
       end
 
