@@ -317,3 +317,7 @@
 ## v0.13.0
 
 * Refactor on product fields
+
+## v0.13.1
+
+* Bugfix on product stocks

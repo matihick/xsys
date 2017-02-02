@@ -44,9 +44,9 @@ module Xsys
         if shop_code_or_array.nil?
           stocks.map(&:quantity).sum
         elsif shop_code_or_array.is_a?(Array)
-          stocks.find_all { |s| shop_code_or_array.include?(s.code) }.map(&:quantity).sum
+          stocks.find_all { |s| shop_code_or_array.include?(s.shop_code) }.map(&:quantity).sum
         elsif shop_code_or_array.is_a?(String)
-          stocks.find_all { |s| shop_code_or_array.upcase == s.code }.map(&:quantity).sum
+          stocks.find_all { |s| shop_code_or_array.upcase == s.shop_code }.map(&:quantity).sum
         else
           raise 'invalid input!'
         end
@@ -56,9 +56,9 @@ module Xsys
         if shop_code_or_array.nil?
           stocks.map(&:available).sum
         elsif shop_code_or_array.is_a?(Array)
-          stocks.find_all { |s| shop_code_or_array.include?(s.code) }.map(&:available).sum
+          stocks.find_all { |s| shop_code_or_array.include?(s.shop_code) }.map(&:available).sum
         elsif shop_code_or_array.is_a?(String)
-          stocks.find_all { |s| shop_code_or_array.upcase == s.code }.map(&:available).sum
+          stocks.find_all { |s| shop_code_or_array.upcase == s.shop_code }.map(&:available).sum
         else
           raise 'invalid input!'
         end
@@ -68,9 +68,9 @@ module Xsys
         if shop_code_or_array.nil?
           stocks.map(&:reserved).sum
         elsif shop_code_or_array.is_a?(Array)
-          stocks.find_all { |s| shop_code_or_array.include?(s.code) }.map(&:reserved).sum
+          stocks.find_all { |s| shop_code_or_array.include?(s.shop_code) }.map(&:reserved).sum
         elsif shop_code_or_array.is_a?(String)
-          stocks.find_all { |s| shop_code_or_array.upcase == s.code }.map(&:reserved).sum
+          stocks.find_all { |s| shop_code_or_array.upcase == s.shop_code }.map(&:reserved).sum
         else
           raise 'invalid input!'
         end
