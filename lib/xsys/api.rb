@@ -174,8 +174,6 @@ module Xsys
       else
         false
       end
-
-      Model::StockReserve.new(put_request("/stock_reserves/#{stock_reserve_code}/cancel")[:body])
     end
 
     def self.defer_stock_reserve(stock_reserve_code, expiration_date, user_login)
