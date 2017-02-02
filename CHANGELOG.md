@@ -321,3 +321,7 @@
 ## v0.13.1
 
 * Bugfix on product stocks
+
+## v0.14.0
+
+* Added methods for stock reserve
