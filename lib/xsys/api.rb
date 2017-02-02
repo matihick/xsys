@@ -164,7 +164,7 @@ module Xsys
     end
 
     def self.cancel_stock_reserve(stock_reserve_code, user_login)
-      response = put_request("/stock_reserves/#{stock_reserve_code}/cancel")
+      response = put_request("/stock_reserves/#{stock_reserve_code}/cancel", { user_login: user_login })
 
       if response[:status_code] == 200
         Model::StockReserve.new(response[:body])
@@ -177,7 +177,8 @@ module Xsys
 
     def self.defer_stock_reserve(stock_reserve_code, expiration_date, user_login)
       response = put_request("/stock_reserves/#{stock_reserve_code}/defer", {
-        expiration_date: expiration_date
+        expiration_date: expiration_date,
+        user_login: user_login
       })
 
       if response[:status_code] == 200

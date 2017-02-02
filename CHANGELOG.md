@@ -333,3 +333,7 @@
 ## v0.15.1
 
 * Fixes on interface for stock reserve
+
+## v0.15.2
+
+* Fixes on interface for stock reserve
