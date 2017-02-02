@@ -154,15 +154,37 @@ module Xsys
     end
 
     def self.create_stock_reserve(attrs={})
-      Model::StockReserve.new(post_request('/stock_reserves', attrs)[:body])
+      response = post_request('/stock_reserves', attrs)
+
+      if response[:status_code] == 200
+        Model::StockReserve.new(response[:body])
+      else
+        false
+      end
     end
 
-    def self.cancel_stock_reserve(stock_reserve_code)
+    def self.cancel_stock_reserve(stock_reserve_code, user_login)
+      response = put_request("/stock_reserves/#{stock_reserve_code}/cancel")
+
+      if response[:status_code] == 200
+        Model::StockReserve.new(response[:body])
+      else
+        false
+      end
+
       Model::StockReserve.new(put_request("/stock_reserves/#{stock_reserve_code}/cancel")[:body])
     end
 
-    def self.defer_stock_reserve(stock_reserve_code, expiration_date)
-      Model::StockReserve.new(put_request("/stock_reserves/#{stock_reserve_code}/defer", { expiration_date: expiration_date })[:body])
+    def self.defer_stock_reserve(stock_reserve_code, expiration_date, user_login)
+      response = put_request("/stock_reserves/#{stock_reserve_code}/defer", {
+        expiration_date: expiration_date
+      })
+
+      if response[:status_code] == 200
+        Model::StockReserve.new(response[:body])
+      else
+        false
+      end
     end
 
     private

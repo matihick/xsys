@@ -329,3 +329,7 @@
 ## v0.15.0
 
 * Changed response for stock reserve
+
+## v0.15.1
+
+* Fixes on interface for stock reserve
