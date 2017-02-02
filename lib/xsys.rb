@@ -10,6 +10,7 @@ require 'xsys/model/sale_item'
 require 'xsys/model/seller'
 require 'xsys/model/shop'
 require 'xsys/model/stock'
+require 'xsys/model/stock_reserve'
 
 require 'xsys/api'
 require 'xsys/pagination'

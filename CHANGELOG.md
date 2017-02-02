@@ -325,3 +325,7 @@
 ## v0.14.0
 
 * Added methods for stock reserve
+
+## v0.15.0
+
+* Changed response for stock reserve

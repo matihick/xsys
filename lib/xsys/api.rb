@@ -154,15 +154,15 @@ module Xsys
     end
 
     def self.create_stock_reserve(attrs={})
-      post_request('/stock_reserves', attrs)[:body]
+      Model::StockReserve.new(post_request('/stock_reserves', attrs)[:body])
     end
 
     def self.cancel_stock_reserve(stock_reserve_code)
-      put_request("/stock_reserves/#{stock_reserve_code}/cancel")[:body]
+      Model::StockReserve.new(put_request("/stock_reserves/#{stock_reserve_code}/cancel")[:body])
     end
 
     def self.defer_stock_reserve(stock_reserve_code, expiration_date)
-      put_request("/stock_reserves/#{stock_reserve_code}/defer", { expiration_date: expiration_date })[:body]
+      Model::StockReserve.new(put_request("/stock_reserves/#{stock_reserve_code}/defer", { expiration_date: expiration_date })[:body])
     end
 
     private
