@@ -163,8 +163,11 @@ module Xsys
       end
     end
 
-    def self.cancel_stock_reserve(stock_reserve_code, user_login)
-      response = put_request("/stock_reserves/#{stock_reserve_code}/cancel", { user_login: user_login })
+    def self.cancel_stock_reserve(stock_reserve_code, user_login, cancellation_reason=nil)
+      response = put_request("/stock_reserves/#{stock_reserve_code}/cancel", {
+        user_login: user_login,
+        cancellation_reason: cancellation_reason
+      })
 
       if response[:status_code] == 200
         Model::StockReserve.new(response[:body])

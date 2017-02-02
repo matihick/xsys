@@ -337,3 +337,7 @@
 ## v0.15.2
 
 * Fixes on interface for stock reserve
+
+## v0.15.3
+
+* Added cancellation reason optional parameter to cancel stock reserve method
