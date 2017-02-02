@@ -40,27 +40,39 @@ module Xsys
         end
       end
 
-      def stock_quantity(shop_codes=[])
-        if shop_codes.empty?
+      def stock_quantity(shop_code_or_array=nil)
+        if shop_code_or_array.nil?
           stocks.map(&:quantity).sum
+        elsif shop_code_or_array.is_a?(Array)
+          stocks.find_all { |s| shop_code_or_array.include?(s.code) }.map(&:quantity).sum
+        elsif shop_code_or_array.is_a?(String)
+          stocks.find_all { |s| shop_code_or_array.upcase == s.code }.map(&:quantity).sum
         else
-          stocks.find_all { |s| shop_codes.include?(s.code) }.map(&:quantity).sum
+          raise 'invalid input!'
         end
       end
 
-      def stock_available(shop_codes=[])
-        if shop_codes.empty?
+      def stock_available(shop_code_or_array=nil)
+        if shop_code_or_array.nil?
           stocks.map(&:available).sum
+        elsif shop_code_or_array.is_a?(Array)
+          stocks.find_all { |s| shop_code_or_array.include?(s.code) }.map(&:available).sum
+        elsif shop_code_or_array.is_a?(String)
+          stocks.find_all { |s| shop_code_or_array.upcase == s.code }.map(&:available).sum
         else
-          stocks.find_all { |s| shop_codes.include?(s.code) }.map(&:available).sum
+          raise 'invalid input!'
         end
       end
 
-      def stock_reserved(shop_codes=[])
-        if shop_codes.empty?
+      def stock_reserved(shop_code_or_array=nil)
+        if shop_code_or_array.nil?
           stocks.map(&:reserved).sum
+        elsif shop_code_or_array.is_a?(Array)
+          stocks.find_all { |s| shop_code_or_array.include?(s.code) }.map(&:reserved).sum
+        elsif shop_code_or_array.is_a?(String)
+          stocks.find_all { |s| shop_code_or_array.upcase == s.code }.map(&:reserved).sum
         else
-          stocks.find_all { |s| shop_codes.include?(s.code) }.map(&:reserved).sum
+          raise 'invalid input!'
         end
       end
 
@@ -74,7 +86,25 @@ module Xsys
         stocks.find_all { |x| x.sellable }
       end
 
-      def price_date_for_list(price_list_id)
+      def sellable_stocks_quantity
+        sellable_stocks.map(&:quantity).sum
+      end
+
+      def sellable_stocks_reserved
+        sellable_stocks.map(&:reserved).sum
+      end
+
+      def sellable_stocks_available
+        sellable_stocks.map(&:available).sum
+      end
+
+      def price_list(price_list_id)
+        prices.find { |p|
+          p.price_list_id.to_i == price_list_id.to_i
+        }
+      end
+
+      def price_date_with_list(price_list_id)
         prices.find { |p|
           p.price_list_id.to_i == price_list_id.to_i
         }.try(:price_update_date)
@@ -86,7 +116,7 @@ module Xsys
         }.try(:markup) || BigDecimal.new('0.0')
       end
 
-      def price_in_list(price_list_id)
+      def total_price_with_list(price_list_id)
         prices.find { |p|
           p.price_list_id.to_i == price_list_id.to_i
         }.try(:total_price) || BigDecimal.new('0.0')
