@@ -163,6 +163,16 @@ module Xsys
       end
     end
 
+    def self.get_stock_reserve(code)
+      response_body = get_request("/stock_reserves/#{code}")[:body]
+
+      if response_body == 'null'
+        nil
+      else
+        Model::StockReserve.new(response_body)
+      end
+    end
+
     def self.search_stock_reserves(filters={})
       get_request('/stock_reserves', filters)[:body].map { |x| Model::StockReserve.new(x) }
     end
