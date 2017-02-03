@@ -163,6 +163,10 @@ module Xsys
       end
     end
 
+    def self.search_stock_reserves(filters={})
+      get_request('/stock_reserves', filters)[:body].map { |x| Model::StockReserve.new(x) }
+    end
+
     def self.cancel_stock_reserve(stock_reserve_code, user_login, cancellation_reason=nil)
       response = put_request("/stock_reserves/#{stock_reserve_code}/cancel", {
         user_login: user_login,

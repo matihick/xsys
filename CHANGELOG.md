@@ -345,3 +345,7 @@
 ## v0.15.4
 
 * Bugfix cancelling stock reserves
+
+## v0.16
+
+* Added method to search stock reserves
