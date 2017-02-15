@@ -207,7 +207,12 @@ module Xsys
       Model::Company.new(get_request("/companies/#{code}")[:body])
     end
 
-    def self.calculate_company_taxes(attrs={})
+    def self.calculate_company_taxes(company_code, items)
+      attrs = {
+        company_code: company_code,
+        items: items.to_json
+      }
+
       Model::CompanyTaxCalculation.new(get_request('/companies/calculate_taxes', attrs)[:body])
     end
 

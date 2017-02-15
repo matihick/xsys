@@ -361,3 +361,7 @@
 ## v0.17.1
 
 * Bugfix company methods
+
+## v0.17.2
+
+* Changed interface for method to calculate taxes for company
