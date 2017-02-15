@@ -204,11 +204,11 @@ module Xsys
     end
 
     def self.get_company(code)
-      Model::Company.new(get_request("/companies/#{code}"))
+      Model::Company.new(get_request("/companies/#{code}")[:body])
     end
 
     def self.calculate_company_taxes(attrs={})
-      Model::CompanyTaxCalculation.new(get_request('/companies/calculate_taxes', attrs))
+      Model::CompanyTaxCalculation.new(get_request('/companies/calculate_taxes', attrs)[:body])
     end
 
     private

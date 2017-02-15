@@ -357,3 +357,7 @@
 ## v0.17.0
 
 * Added method for company and tax calculation
+
+## v0.17.1
+
+* Bugfix company methods
