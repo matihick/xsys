@@ -1,4 +1,6 @@
 require 'xsys/model/background_job'
+require 'xsys/model/company'
+require 'xsys/model/company_tax_calculation'
 require 'xsys/model/job_event'
 require 'xsys/model/price_list'
 require 'xsys/model/product'

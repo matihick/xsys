@@ -353,3 +353,7 @@
 ## v0.16.1
 
 * Added method to get stock reserve
+
+## v0.17.0
+
+* Added method for company and tax calculation
