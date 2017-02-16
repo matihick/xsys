@@ -116,6 +116,12 @@ module Xsys
         }.try(:markup) || BigDecimal.new('0.0')
       end
 
+      def taxed_price_with_list(price_list_id)
+        prices.find { |p|
+          p.price_list_id.to_i == price_list_id.to_i
+        }.try(:taxed_price) || BigDecimal.new('0.0')
+      end
+
       def total_price_with_list(price_list_id)
         prices.find { |p|
           p.price_list_id.to_i == price_list_id.to_i

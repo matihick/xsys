@@ -2,7 +2,7 @@ module Xsys
   module Model
     class ProductPriceList
       def self.attr_list
-        [:product_id, :product_name, :price_list_id, :total_price,
+        [:product_id, :product_name, :price_list_id, :taxed_price, :total_price,
          :markup, :price_update_date, :price_update_time]
       end
 
@@ -11,7 +11,7 @@ module Xsys
       def initialize(attributes={})
         time_fields = ['price_update_time']
         date_fields = ['price_update_date']
-        decimal_fields = ['total_price']
+        decimal_fields = ['total_price', 'taxed_price', 'markup']
 
         attributes.each do |k, v|
           if time_fields.include?(k.to_s)

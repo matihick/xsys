@@ -365,3 +365,7 @@
 ## v0.17.2
 
 * Changed interface for method to calculate taxes for company
+
+## v0.18
+
+* Added taxed price attribute in price lists
