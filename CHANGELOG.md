@@ -366,6 +366,10 @@
 
 * Changed interface for method to calculate taxes for company
 
-## v0.18
+## v0.18.0
 
 * Added taxed price attribute in price lists
+
+## v0.19.0
+
+* Fixed output for create stock reserve method

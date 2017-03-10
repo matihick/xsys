@@ -157,7 +157,11 @@ module Xsys
       response = post_request('/stock_reserves', attrs)
 
       if response[:status_code] == 200
-        Model::StockReserve.new(response[:body])
+        if response[:body] == 'null'
+          false
+        else
+          Model::StockReserve.new(response[:body])
+        end
       else
         false
       end
