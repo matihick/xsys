@@ -373,3 +373,7 @@
 ## v0.19.0
 
 * Fixed output for create stock reserve method
+
+## v0.19.1
+
+* Add real online stock to products
