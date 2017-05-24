@@ -208,7 +208,13 @@ module Xsys
     end
 
     def self.get_company(code)
-      Model::Company.new(get_request("/companies/#{code}")[:body])
+      result = get_request("/companies/#{code}")[:body]
+
+      if result == 'null'
+        nil
+      else
+        Model::Company.new(get_request("/companies/#{code}")[:body])
+      end
     end
 
     def self.calculate_company_taxes(company_code, items)

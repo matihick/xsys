@@ -377,3 +377,7 @@
 ## v0.19.1
 
 * Add real online stock to products
+
+## v0.19.2
+
+* Capture null case when search company by cuit
