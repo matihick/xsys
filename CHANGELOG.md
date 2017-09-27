@@ -381,3 +381,7 @@
 ## v0.19.2
 
 * Capture null case when search company by cuit
+
+## v0.20.0
+
+* Added price update login

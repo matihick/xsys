@@ -3,7 +3,7 @@ module Xsys
     class ProductPriceList
       def self.attr_list
         [:product_id, :product_name, :price_list_id, :taxed_price, :total_price,
-         :markup, :price_update_date, :price_update_time]
+         :markup, :price_update_date, :price_update_time, :price_update_login]
       end
 
       attr_reader *attr_list
