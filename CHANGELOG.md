@@ -389,3 +389,7 @@
 ## v0.21.0
 
 * Added method to calculate corporation taxes
+
+## v0.22.0
+
+* Added class for corporation taxes calculation

@@ -227,9 +227,14 @@ module Xsys
     end
 
     def self.calculate_corporation_taxes(cuit, items)
-      attrs = { cuit: cuit, items: items.to_json }
+      attrs =
 
-      OpenStruct.new(post_request('/corporations/taxes_calculation', attrs)[:body])
+      response = post_request('/corporations/taxes_calculation', {
+        cuit: cuit,
+        items: items.to_json
+      })
+
+      CorporationTaxesCalculation.new(response[:body])
     end
 
     private
