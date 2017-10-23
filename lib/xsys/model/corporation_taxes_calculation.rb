@@ -8,9 +8,9 @@ module Xsys
       attr_reader *attr_list
 
       def initialize(attributes={})
-        self.cuit = attributes[:cuit]
-        self.corporate_name = attributes[:corporate_name]
-        self.taxes = attributes[:taxes].map { |tax_attrs| CorporationTax.new(tax_attrs) }
+        self.cuit = attributes['cuit']
+        self.corporate_name = attributes['corporate_name']
+        self.taxes = attributes['taxes'].map { |tax_attrs| CorporationTax.new(tax_attrs) }
       end
 
       def get_tax(tax_kind_code)

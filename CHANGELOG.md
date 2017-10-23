@@ -401,3 +401,7 @@
 ## v0.24.0
 
 * Fixed syntax error corporation taxes
+
+## v0.26.0
+
+* Fixed syntax error corporation taxes

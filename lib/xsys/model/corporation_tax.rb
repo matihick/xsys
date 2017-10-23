@@ -8,10 +8,10 @@ module Xsys
       attr_reader *attr_list
 
       def initialize(attributes={})
-        self.tax_kind_code = attributes[:tax_kind_code]
-        self.quotient = BigDecimal.new(attributes[:quotient])
-        self.amount = BigDecimal.new(attributes[:amount])
-        self.use_default_value = attributes[:use_default_value]
+        self.tax_kind_code = attributes['tax_kind_code']
+        self.quotient = BigDecimal.new(attributes['quotient'])
+        self.amount = BigDecimal.new(attributes['amount'])
+        self.use_default_value = attributes['use_default_value']
       end
 
       private

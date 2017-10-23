@@ -227,8 +227,6 @@ module Xsys
     end
 
     def self.calculate_corporation_taxes(cuit, items)
-      attrs =
-
       response = post_request('/corporations/taxes_calculation', {
         cuit: cuit,
         items: items.to_json
