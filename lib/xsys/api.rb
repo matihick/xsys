@@ -226,6 +226,12 @@ module Xsys
       Model::CompanyTaxCalculation.new(get_request('/companies/calculate_taxes', attrs)[:body])
     end
 
+    def self.calculate_corporation_taxes(cuit, items)
+      attrs = { cuit: cuit, items: items.to_json }
+
+      OpenStruct.new(post_request('/corporations/taxes_calculation', attrs)[:body])
+    end
+
     private
 
     def self.get_request(action, params={}, headers={})

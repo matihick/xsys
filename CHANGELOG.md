@@ -385,3 +385,7 @@
 ## v0.20.0
 
 * Added price update login
+
+## v0.21.0
+
+* Added method to calculate corporation taxes
