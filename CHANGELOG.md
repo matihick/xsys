@@ -405,3 +405,7 @@
 ## v0.26.0
 
 * Fixed syntax error corporation taxes
+
+## v0.27.0
+
+* Added stockable attribute to products
