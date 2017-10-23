@@ -393,3 +393,7 @@
 ## v0.22.0
 
 * Added class for corporation taxes calculation
+
+## v0.23.0
+
+* Fixed syntax error corporation taxes

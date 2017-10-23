@@ -223,7 +223,7 @@ module Xsys
         items: items.to_json
       }
 
-      Model::CompanyTaxCalculation.new(get_request('/companies/calculate_taxes', attrs)[:body])
+      Model::CorporationTaxesCalculation.new(get_request('/companies/calculate_taxes', attrs)[:body])
     end
 
     def self.calculate_corporation_taxes(cuit, items)
