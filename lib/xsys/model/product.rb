@@ -26,9 +26,11 @@ module Xsys
           elsif k.to_s == 'provider'
             @provider = ProductProvider.new(v) unless v.nil?
           elsif k.to_s == 'stocks'
-            @stocks = v.map { |s| Stock.new(s) } unless v.nil?
+            @stocks = v.map { |x| Stock.new(x) } unless v.nil?
           elsif k.to_s == 'prices'
-            @prices = v.map { |s| ProductPriceList.new(s) }
+            @prices = v.map { |x| ProductPriceList.new(x) } unless v.nil?
+          elsif k.to_s == 'packages'
+            @packages = v.map { |x| ProductPackage.new(x) } unless v.nil?
           elsif time_fields.include?(k.to_s)
             self.send("#{k}=", Time.parse(v)) unless v.nil?
           elsif date_fields.include?(k.to_s)

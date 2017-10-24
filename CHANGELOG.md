@@ -413,3 +413,7 @@
 ## v0.28.0
 
 * Added attribute to corporation tax
+
+## v0.30.0
+
+* Added attributes for packages
