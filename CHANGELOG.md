@@ -409,3 +409,7 @@
 ## v0.27.0
 
 * Added stockable attribute to products
+
+## v0.28.0
+
+* Added attribute to corporation tax
