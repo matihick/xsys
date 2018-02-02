@@ -417,3 +417,7 @@
 ## v0.30.0
 
 * Added attributes for packages
+
+## v0.31.0
+
+* Added name for packages

@@ -2,7 +2,7 @@ module Xsys
   module Model
     class ProductPackage
       def self.attr_list
-        [:length, :width, :height, :weight, :ean]
+        [:length, :width, :height, :weight, :ean, :name]
       end
 
       attr_reader *attr_list
