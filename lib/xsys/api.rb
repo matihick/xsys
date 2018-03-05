@@ -213,7 +213,7 @@ module Xsys
       if result == 'null'
         nil
       else
-        Model::Company.new(get_request("/companies/#{code}")[:body])
+        Model::Company.new(result)
       end
     end
 
@@ -224,6 +224,16 @@ module Xsys
       }
 
       Model::CompanyTaxCalculation.new(get_request('/companies/calculate_taxes', attrs)[:body])
+    end
+
+    def self.get_corporation(cuit)
+      result = get_request("/corporations/#{cuit}")[:body]
+
+      if result == 'null'
+        nil
+      else
+        Model::Corporation.new(result)
+      end
     end
 
     def self.calculate_corporation_taxes(cuit, items)

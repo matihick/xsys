@@ -421,3 +421,7 @@
 ## v0.31.0
 
 * Added name for packages
+
+## v0.32.0
+
+* Added method to get corporation by cuit
