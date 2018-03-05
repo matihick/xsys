@@ -229,7 +229,7 @@ module Xsys
     def self.get_corporation(cuit)
       result = get_request("/corporations/#{cuit}")[:body]
 
-      if result == 'null'
+      if result.blank?
         nil
       else
         Model::Corporation.new(result)

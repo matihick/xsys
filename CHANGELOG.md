@@ -425,3 +425,7 @@
 ## v0.32.0
 
 * Added method to get corporation by cuit
+
+## v0.33.0
+
+* Bugfix on getting corporation
