@@ -10,10 +10,10 @@ module Xsys
       def initialize(attributes={})
         attributes.each do |k, v|
           if k.to_s == 'taxes'
-            @taxes = v.map { |x| CorporationTax.new(x) } unless v.nil?
+            self.taxes = v.map { |x| CorporationTax.new(x) } unless v.nil?
           else
+            self.send("#{k}=", v) if self.respond_to?(k)
           end
-          self.send("#{k}=", v) if self.respond_to?(k)
         end
       end
 

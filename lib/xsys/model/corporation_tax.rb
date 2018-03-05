@@ -12,7 +12,7 @@ module Xsys
         self.tax_kind_code = attributes['tax_kind_code']
         self.tax_kind_name = attributes['tax_kind_name']
         self.quotient = BigDecimal.new(attributes['quotient'])
-        self.amount = BigDecimal.new(attributes['amount'])
+        self.amount = BigDecimal.new(attributes['amount']) rescue nil
         self.use_default_value = attributes['use_default_value']
       end
 

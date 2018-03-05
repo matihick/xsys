@@ -429,3 +429,7 @@
 ## v0.33.0
 
 * Bugfix on getting corporation
+
+## v0.34.0
+
+* Bugfix on getting corporation
