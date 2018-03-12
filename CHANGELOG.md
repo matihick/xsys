@@ -433,3 +433,7 @@
 ## v0.34.0
 
 * Bugfix on getting corporation
+
+## v0.35.0
+
+* Added voice description to pickup order items

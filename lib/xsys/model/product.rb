@@ -9,7 +9,7 @@ module Xsys
          :price_update_time, :online_stock, :real_online_stock, :product_size_code, :weight,
          :length, :width, :height, :packages_quantity, :ean, :packages, :regular_price,
          :reduced_price, :credit_card_price, :brand, :model, :has_stock_on_hold,
-         :availability_date, :stockable]
+         :availability_date, :stockable, :voice_description]
       end
 
       attr_reader *attr_list
