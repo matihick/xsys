@@ -437,3 +437,7 @@
 ## v0.35.0
 
 * Added voice description to pickup order items
+
+## v0.36.0
+
+* Added methods to get cash register periods and invoice kinds

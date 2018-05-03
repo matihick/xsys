@@ -245,6 +245,16 @@ module Xsys
       Model::CorporationTaxesCalculation.new(response[:body])
     end
 
+    def self.get_cash_register_periods(filters={})
+      response = get_request('/cash_register_periods', filters)
+      response[:body].map { |x| Model::CashRegisterPeriod.new(x) }
+    end
+
+    def self.get_invoice_kinds(filters={})
+      response = get_request('/invoice_kinds', filters)
+      response[:body].map { |x| Model::InvoiceKind.new(x) }
+    end
+
     private
 
     def self.get_request(action, params={}, headers={})
