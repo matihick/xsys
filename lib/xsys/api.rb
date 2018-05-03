@@ -250,6 +250,16 @@ module Xsys
       response[:body].map { |x| Model::CashRegisterPeriod.new(x) }
     end
 
+    def self.get_invoice_kind(code)
+      response = get_request("/invoice_kinds/#{code}")
+
+      if result.blank?
+        nil
+      else
+        Model::InvoiceKind.new(result)
+      end
+    end
+
     def self.get_invoice_kinds(filters={})
       response = get_request('/invoice_kinds', filters)
       response[:body].map { |x| Model::InvoiceKind.new(x) }
