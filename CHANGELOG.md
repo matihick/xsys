@@ -445,3 +445,7 @@
 ## v0.37.0
 
 * Added method to get invoice kind
+
+## v0.38.0
+
+* Added method to get cash register period
