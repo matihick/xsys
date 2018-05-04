@@ -449,3 +449,7 @@
 ## v0.38.0
 
 * Added method to get cash register period
+
+## v0.39.0
+
+* Bugfixes

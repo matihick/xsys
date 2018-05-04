@@ -251,7 +251,7 @@ module Xsys
     end
 
     def self.get_cash_register_period(code)
-      response = get_request("/cash_register_period/#{code}")
+      result = get_request("/cash_register_period/#{code}")[:body]
 
       if result.blank?
         nil
@@ -266,7 +266,7 @@ module Xsys
     end
 
     def self.get_invoice_kind(code)
-      response = get_request("/invoice_kinds/#{code}")
+      result = get_request("/invoice_kinds/#{code}")[:body]
 
       if result.blank?
         nil
