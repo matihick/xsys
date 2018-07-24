@@ -457,3 +457,7 @@
 ## v0.40.0
 
 * Fixed method to get cash register period
+
+## v0.41.0
+
+* Added fields to products

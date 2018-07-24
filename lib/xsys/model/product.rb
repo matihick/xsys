@@ -9,16 +9,18 @@ module Xsys
          :price_update_time, :online_stock, :real_online_stock, :product_size_code, :weight,
          :length, :width, :height, :packages_quantity, :ean, :packages, :regular_price,
          :reduced_price, :credit_card_price, :brand, :model, :has_stock_on_hold,
-         :availability_date, :stockable, :voice_description]
+         :availability_date, :stockable, :voice_description, :total_real_cost, 
+         :real_cost_update_time, :real_cost_update_date]
       end
 
       attr_reader *attr_list
 
       def initialize(attributes={})
-        time_fields = ['cost_update_time', 'last_cost_update_time', 'price_update_time']
-        date_fields = ['cost_update_date', 'last_cost_update_date', 'price_update_date', 'availability_date']
-        decimal_fields = ['vat_rate', 'taxed_cost', 'vat_cost', 'total_cost', 'last_total_cost',
-          'last_taxed_cost', 'regular_price', 'reduced_price', 'credit_card_price']
+        time_fields = ['cost_update_time', 'last_cost_update_time', 'price_update_time', 'real_cost_update_time']
+        date_fields = ['cost_update_date', 'last_cost_update_date', 'price_update_date', 
+          'real_cost_update_date', 'availability_date']
+        decimal_fields = ['vat_rate', 'taxed_cost', 'vat_cost', 'total_cost', 'last_total_cost', 'last_taxed_cost', 
+          'regular_price', 'reduced_price', 'credit_card_price', 'total_real_cost']
 
         attributes.each do |k, v|
           if k.to_s == 'category'
