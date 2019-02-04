@@ -251,12 +251,12 @@ module Xsys
     end
 
     def self.get_cash_register_period(code)
-      result = get_request("/cash_register_periods/#{code}")[:body]
+      response = get_request("/cash_register_periods/#{code}")[:body]
 
-      if result.blank?
+      if response[:body].blank?
         nil
       else
-        Model::CashRegisterPeriod.new(result)
+        Model::CashRegisterPeriod.new(response[:body])
       end
     end
 
@@ -266,12 +266,42 @@ module Xsys
     end
 
     def self.get_invoice_kind(code)
-      result = get_request("/invoice_kinds/#{code}")[:body]
+      response = get_request("/invoice_kinds/#{code}")[:body]
 
-      if result.blank?
+      if response[:body].blank?
         nil
       else
-        Model::InvoiceKind.new(result)
+        Model::InvoiceKind.new(response[:body])
+      end
+    end
+
+    def self.get_provinces
+      response = get_request('/provinces')
+      response[:body].map { |x| Model::Province.new(x) }
+    end
+
+    def self.get_province(province_code)
+      response = get_request("/provinces/#{province_code}")[:body]
+
+      if response[:body].blank?
+        nil
+      else
+        Model::Province.new(response[:body])
+      end
+    end
+
+    def self.search_localities(filters={})
+      response = get_request('/localities', filters)
+      response[:body].map { |x| Model::Locality.new(x) }
+    end
+
+    def self.get_locality(locality_code)
+      response = get_request("/localities/#{locality_code}")
+
+      if response[:body].blank?
+        nil
+      else
+        Model::Locality.new(response[:body])
       end
     end
 
