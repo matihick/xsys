@@ -462,7 +462,10 @@
 
 * Added fields to products
 
-
 ## v0.42.0
 
 * Added methods to get localities and provinces
+
+## v0.43.0
+
+* Bugfixes
