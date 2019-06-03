@@ -251,7 +251,7 @@ module Xsys
     end
 
     def self.get_cash_register_period(code)
-      response = get_request("/cash_register_periods/#{code}")[:body]
+      response = get_request("/cash_register_periods/#{code}")
 
       if response[:body].blank?
         nil
