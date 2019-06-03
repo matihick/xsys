@@ -266,7 +266,7 @@ module Xsys
     end
 
     def self.get_invoice_kind(code)
-      response = get_request("/invoice_kinds/#{code}")[:body]
+      response = get_request("/invoice_kinds/#{code}")
 
       if response[:body].blank?
         nil
@@ -281,7 +281,7 @@ module Xsys
     end
 
     def self.get_province(province_code)
-      response = get_request("/provinces/#{province_code}")[:body]
+      response = get_request("/provinces/#{province_code}")
 
       if response[:body].blank?
         nil
