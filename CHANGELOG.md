@@ -469,3 +469,7 @@
 ## v0.43.0
 
 * Bugfixes
+
+## v0.44.0
+
+* Added business unit code to invoice kinds
