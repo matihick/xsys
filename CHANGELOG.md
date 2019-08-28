@@ -481,3 +481,7 @@
 ## v0.46.0
 
 * Bugfix
+
+## v0.47.0
+
+* Added method to mass update product marketplace listings

@@ -153,6 +153,10 @@ module Xsys
       put_request('/product_price_lists', attrs)[:body]
     end
 
+    def self.mass_update_product_marketplaces(attrs={})
+      post_request('/product_marketplace_listings/mass_update', attrs)[:body]    
+    end
+
     def self.create_stock_reserve(attrs={})
       response = post_request('/stock_reserves', attrs)
 
